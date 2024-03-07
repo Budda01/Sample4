@@ -117,37 +117,11 @@ double calc_exp(s21_stack *expression, int *err) {
 int s21_smart_calc(const char *str, char *result) {
   double res = 0;
   s21_stack queue = {0};
-  printf("res %s\n", str);
   int err = to_postfix(str, &queue);
-    int r = 0;
-    while (queue.stack_array[r].type != 0){
-    printf("%d TYPE %d\n", r, queue.stack_array[r].type);
-    printf("%d VALUE %f\n", r, queue.stack_array[r].value);
-    printf("%d PRIOR %d\n", r, queue.stack_array[r].priority);
-    printf("\n");
-    r++;
-    }
   if (err == 0) {
     res = calc_exp(&queue, &err);
   }
   sprintf(result, "%f", res);
-  
-
   return err;
 }
 
-// int main(){
-//     char res[5];
-//    char str[] = "2(-4.9000000)";
-//    int g = s21_smart_calc(str, res);
-//    printf("ERRG %d\n", g);
-// }
-
-// int r = 0;
-// while (queue.stack_array[r].type != 0){
-// printf("%d TYPE %d\n", r, queue.stack_array[r].type);
-// printf("%d VALUE %f\n", r, queue.stack_array[r].value);
-// printf("%d PRIOR %d\n", r, queue.stack_array[r].priority);
-// printf("\n");
-// r++;
-// }

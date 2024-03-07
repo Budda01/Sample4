@@ -7,7 +7,7 @@ Graph::Graph(QWidget *parent)
 {
     ui->setupUi(this);
     h = 0.1;
-    max_x = -4.5;
+    max_x = 5;
     min_x = -5;
     max_y = 5;
     min_y = -5; 

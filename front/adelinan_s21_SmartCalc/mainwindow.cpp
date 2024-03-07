@@ -2,27 +2,22 @@
 #include "./ui_mainwindow.h"
 #include <iomanip>
 #include <locale> 
-#include <QDebug>
 
 extern "C" {
     #include "../../s21_SmartCalc.h"
 }
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    graph = nullptr;
-    
+    graph = nullptr;  
 }
-
 MainWindow::~MainWindow()
 {
 
     delete ui;
 }
-
 void MainWindow::openGraph()
 {   
     if (graph){
@@ -30,7 +25,6 @@ void MainWindow::openGraph()
     }
     graph = new Graph(this);
 }
-
 void MainWindow::closeGraph()
 {
     if (graph) {
@@ -39,105 +33,79 @@ void MainWindow::closeGraph()
         graph = nullptr; 
     }
 }
-
 void MainWindow::on_pushButton_DOT_clicked()
 {
     ui->result->setText(ui->result->text() + ".");
 
 }
-
-
 void MainWindow::on_pushButton_0_clicked()
 {
     ui->result->setText(ui->result->text() + "0");
 }
-
-
 void MainWindow::on_pushButton_1_clicked()
 {
     ui->result->setText(ui->result->text() + "1");
 }
-
 void MainWindow::on_pushButton_2_clicked()
 {
     ui->result->setText(ui->result->text() + "2");
 }
-
 void MainWindow::on_pushButton_3_clicked()
 {
     ui->result->setText(ui->result->text() + "3");
 }
-
 void MainWindow::on_pushButton_4_clicked()
 {
     ui->result->setText(ui->result->text() + "4");
 }
-
 void MainWindow::on_pushButton_5_clicked()
 {
     ui->result->setText(ui->result->text() + "5");
 }
-
 void MainWindow::on_pushButton_6_clicked()
 {
     ui->result->setText(ui->result->text() + "6");
 }
-
 void MainWindow::on_pushButton_7_clicked()
 {
     ui->result->setText(ui->result->text() + "7");
 }
-
 void MainWindow::on_pushButton_8_clicked()
 {
     ui->result->setText(ui->result->text() + "8");
 }
-
 void MainWindow::on_pushButton_9_clicked()
 {
     ui->result->setText(ui->result->text() + "9");
 }
-
 void MainWindow::on_pushButton_PLUS_clicked()
 {
     ui->result->setText(ui->result->text() + "+");
 }
-
-
 void MainWindow::on_pushButton_OP_Bracket_clicked()
 {
     ui->result->setText(ui->result->text() + "(");
 }
-
 void MainWindow::on_pushButton_CL_Bracket_clicked()
 {
     ui->result->setText(ui->result->text() + ")");
 }
-
 void MainWindow::on_pushButton_Pow_clicked()
 {
     ui->result->setText(ui->result->text() + "^");
 }
-
-
 void MainWindow::on_pushButton_MINUS_clicked()
 {
     ui->result->setText(ui->result->text() + "-");
 }
-
-
 void MainWindow::on_pushButton_DIV_clicked()
 {
     ui->result->setText(ui->result->text() + "/");
 }
-
-
 void MainWindow::on_pushButton_MUL_clicked()
 {
     ui->result->setText(ui->result->text() + "*");
 }
-
-
 void MainWindow::on_pushButton_C_clicked()
 {
     QString currentText = ui->result->text();
@@ -147,8 +115,6 @@ void MainWindow::on_pushButton_C_clicked()
         ui->result->setText(currentText);
     }
 }
-
-
 void MainWindow::on_pushButton_AC_clicked()
 {
     ui->result->setText("");
@@ -156,32 +122,26 @@ void MainWindow::on_pushButton_AC_clicked()
         closeGraph();
     }
 }
-
 void MainWindow::on_pushButton_ASIN_clicked()
 {
     ui->result->setText(ui->result->text() + "asin(");
 }
-
 void MainWindow::on_pushButton_ACOS_clicked()
 {
     ui->result->setText(ui->result->text() + "acos(");
 }
-
 void MainWindow::on_pushButton_ATAN_clicked()
 {
     ui->result->setText(ui->result->text() + "atan(");
 }
-
 void MainWindow::on_pushButton_SIN_clicked()
 {
     ui->result->setText(ui->result->text() + "sin(");
 }
-
 void MainWindow::on_pushButton_COS_clicked()
 {
     ui->result->setText(ui->result->text() + "cos(");
 }
-
 void MainWindow::on_pushButton_TAN_clicked()
 {
     ui->result->setText(ui->result->text() + "tan(");
@@ -190,7 +150,6 @@ void MainWindow::on_pushButton_LOG_clicked()
 {
     ui->result->setText(ui->result->text() + "log(");
 }
-
 void MainWindow::on_pushButton_LN_clicked()
 {
     ui->result->setText(ui->result->text() + "ln(");
@@ -199,18 +158,14 @@ void MainWindow::on_pushButton_SQRT_clicked()
 {
     ui->result->setText(ui->result->text() + "sqrt(");
 }
-
-
 void MainWindow::on_pushButton_MOD_clicked()
 {
     ui->result->setText(ui->result->text() + " mod ");
 }
-
 void MainWindow::on_pushButton_X_clicked()
 {
     ui->result->setText(ui->result->text() + "x");
 }
-
 QString  MainWindow::conv_str(char *result){
     std::string output;
     output = result;
@@ -228,12 +183,10 @@ QString  MainWindow::conv_str(char *result){
     }
     return qOutput;
 }
-
 void MainWindow::simple_exp()
 {
     char out[256];
     QString input = ui->result->text();
-    qDebug() << "Input value: " << input;
 
     QByteArray byteArray = input.toUtf8();
     const char *str_c = byteArray.constData();
@@ -250,8 +203,6 @@ void MainWindow::simple_exp()
         ui->result->setText("DIVISION BY ZERO");
     }
 }
-
-
 int MainWindow::calc_values()
 {   
     double res[100] = {0};
@@ -260,7 +211,7 @@ int MainWindow::calc_values()
     QString input = ui->result->text();
     double i = -5;
 
-    while (i < -4.5 && !err){
+    while (i < 5 && !err){
         char out[256];
         double resultValue;
         QString newInput = input;
@@ -283,7 +234,6 @@ int MainWindow::calc_values()
     }
     return err;
 }
-
 void MainWindow::on_pushButton_EQ_clicked()
 {
     QString input = ui->result->text();
@@ -302,7 +252,6 @@ void MainWindow::on_pushButton_EQ_clicked()
     }else{
         simple_exp();
     }
-    
 }
 
 

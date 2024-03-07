@@ -2,7 +2,7 @@
 
 void set_node(node_type type, int priority, double value, s21_node *res) {
   res->type = type;
-  res->priority = priority;
+  res->priority = priority + 22;
   res->value = value;
 }
 
