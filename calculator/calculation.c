@@ -1,15 +1,5 @@
 #include "../s21_SmartCalc.h"
 
-int is_x_exp(s21_stack expression) {
-  int size = get_stack_size(&expression);
-  int check = 0;
-  for (int i = 0; check == 0 && i < size; i++) {
-    if (expression.stack_array[i].type == X) {
-      check = 1;
-    }
-  }
-  return check;
-}
 
 double get_value(s21_stack *stack) {
   s21_node result;
@@ -20,7 +10,7 @@ double get_value(s21_stack *stack) {
 int bin_op_calc(s21_stack *stack, node_type oper) {
   double value_1 = get_value(stack);
   double value_2 = get_value(stack);
-  double val;
+  double val = 0;
   int err = 0;
   switch (oper) {
     case PLUS:
@@ -56,7 +46,7 @@ int bin_op_calc(s21_stack *stack, node_type oper) {
 
 void un_op_calc(s21_stack *stack, node_type oper) {
   double value = get_value(stack);
-  double val;
+  double val = 0;
   switch (oper) {
     case UNAR_M:
       val = (-1) * value;
@@ -107,7 +97,8 @@ double calc_exp(s21_stack *expression, int *err) {
       s21_push(&stack, &expression->stack_array[i]);
     } else if (expression->stack_array[i].type <= 6) {
       *err = bin_op_calc(&stack, expression->stack_array[i].type);
-    } else if (expression->stack_array[i].type >= 6 && expression->stack_array[i].type <= 17) {
+    } else if (expression->stack_array[i].type >= 6 &&
+               expression->stack_array[i].type <= 17) {
       un_op_calc(&stack, expression->stack_array[i].type);
     }
   }
@@ -124,4 +115,3 @@ int s21_smart_calc(const char *str, char *result) {
   sprintf(result, "%f", res);
   return err;
 }
-

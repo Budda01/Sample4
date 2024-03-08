@@ -1,9 +1,9 @@
-.PHONY: all clean test s21_matrix.a gcov_report clang
+.PHONY: all clean test gcov_report clang
 
 GCC = gcc -Wall -Werror -Wextra -std=c11
 
 OS := $(shell uname -s)
-TARGET=s21_calc_adelinan
+TARGET= adelinan_s21_SmartCalc
 
 ifeq ($(OS), Linux)
 	LIB = -lcheck -lrt -lpthread -lsubunit -lm
@@ -16,16 +16,20 @@ ifeq ($(OS), Darwin)
 	OPEN = open
 endif
 
-all: 
+all: test clean install
 
-install: 
-	mkdir -p ../build
-	cd front/adelinan_s21_SmartCalc && qmake && make && make clean && rm -rf Makefile && mv $(TARGET).app ../../build/$(TARGET).app
-	cp -R ../build/$(TARGET).app ~/Desktop/$(TARGET).app
+install:
+	@echo INSTALLATION IN PROGRESS...
+	@mkdir -p build
+	@cd front/adelinan_s21_SmartCalc && qmake && sudo make install && mv $(TARGET) ../../build/$(TARGET) && make clean && rm -rf Makefile
+	@cd ../..
+	cp -R build/$(TARGET) ~/Desktop
+	
 
-s21_SmartCalc:
-	@$(GCC)  calculator/*.c -o s21_calc $(LIB)
-
+uninstall:
+	@rm -rf build
+	@rm -rf ~/Desktop/$(TARGET)
+	
 test: clean
 	@$(GCC) tests/*.c calculator/*.c $(LIB) -o s21_test
 	@./s21_test
@@ -40,12 +44,10 @@ gcov_report : clean
 	@$(OPEN) report/index.html
 
 style: clean
-	@cp ../materials/linters/.clang-format ./.clang-format
-	clang-format -style=Google -n *.c
-	clang-format -style=Google -n ./tests/*.c ./tests/*.h
-	clang-format -style=Google -n *.h
-	@rm .clang-format
-
+	clang-format -style=Google -n s21_SmartCalc.h
+	clang-format -style=Google -n tests/*.h tests/*.c
+	clang-format -style=Google -n calculator/*.c
+	clang-format -style=Google -n front/adelinan_s21_SmartCalc/*.cpp front/adelinan_s21_SmartCalc/*.h
 clean :
 	@rm -rf *.o *.a s21_calc s21_test *.gcda *.gcno coverage.info ./report tmp
 

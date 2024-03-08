@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -30,23 +30,22 @@ typedef enum {
   FIRST_SYM = 22
 } node_type;
 
-typedef struct{
-    node_type type;
-    int priority;
-    double value;
+typedef struct {
+  node_type type;
+  int priority;
+  double value;
 } s21_node;
 
 typedef struct {
-    unsigned int check_brt;
-    node_type last_index;
-    s21_node stack_array[STACK_SIZE];
+  unsigned int check_brt;
+  node_type last_index;
+  s21_node stack_array[STACK_SIZE];
 } s21_stack;
-
 
 void s21_insert(s21_stack *stack, s21_node *res, int position);
 void s21_delete(s21_stack *stack, int position);
 void s21_push(s21_stack *stack, s21_node *node);
-void s21_pop(s21_stack *stack,  s21_node *node);
+void s21_pop(s21_stack *stack, s21_node *node);
 
 double process_digit(const char **str);
 int is_bin_operator(node_type node);
@@ -61,12 +60,10 @@ void proc_priority(s21_stack *stack, s21_stack *queue, s21_node node);
 void proc_bracket(s21_stack *stack, s21_stack *queue);
 void set_node(node_type type, int priority, double value, s21_node *res);
 void transform(s21_stack *string, s21_stack *queue, s21_stack *stack);
-double myAtof(const char *string);
-
+double str_to_double(const char *string);
 
 int s21_smart_calc(const char *str, char *result);
 double calc_exp(s21_stack *expression, int *err);
 void un_op_calc(s21_stack *stack, node_type oper);
 int bin_op_calc(s21_stack *stack, node_type oper);
 double get_value(s21_stack *stack);
-int is_x_exp(s21_stack expression);

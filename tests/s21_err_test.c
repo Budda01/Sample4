@@ -17,7 +17,7 @@ START_TEST(err_test_2) {
 END_TEST
 
 START_TEST(err_test_3) {
-const char str[] = "(2.2)) (+2";
+  const char str[] = "(2.2)) (+2";
   char output[256];
   int res = s21_smart_calc(str, output);
   ck_assert_int_eq(res, 1);
@@ -25,7 +25,7 @@ const char str[] = "(2.2)) (+2";
 END_TEST
 
 START_TEST(err_test_4) {
-const char str[] = "2/(5-5)";
+  const char str[] = "2/(5-5)";
   char output[256];
   int res = s21_smart_calc(str, output);
   ck_assert_int_eq(res, 2);
@@ -33,15 +33,16 @@ const char str[] = "2/(5-5)";
 END_TEST
 
 START_TEST(err_test_5) {
-const char str[] = "1adfdg";
+  const char str[] = "1adfdg";
   char output[256];
-  int res = s21_smart_calc(str, output);;
+  int res = s21_smart_calc(str, output);
+  ;
   ck_assert_int_eq(res, 1);
 }
 END_TEST
 
 START_TEST(err_test_6) {
-const char str[] = "2 / 1";
+  const char str[] = "2 / 1";
   char output[256];
   int res = s21_smart_calc(str, output);
   ck_assert_int_eq(res, 0);
@@ -49,7 +50,7 @@ const char str[] = "2 / 1";
 END_TEST
 
 START_TEST(err_test_7) {
-const char str[] = "2 / 0";
+  const char str[] = "2 / 0";
   char output[256];
   int res = s21_smart_calc(str, output);
   ck_assert_int_eq(res, 2);
@@ -57,7 +58,7 @@ const char str[] = "2 / 0";
 END_TEST
 
 START_TEST(err_test_8) {
-const char str[] = "2 -- 2";
+  const char str[] = "2 -- 2";
   char output[256];
   int res = s21_smart_calc(str, output);
   ck_assert_int_eq(res, 1);
@@ -65,7 +66,12 @@ const char str[] = "2 -- 2";
 END_TEST
 
 START_TEST(err_test_9) {
-const char str[] = "2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41";
+  const char str[] =
+      "2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+"
+      "2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+"
+      "2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+"
+      "2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+"
+      "2+234+45*41";
   char output[256];
   int res = s21_smart_calc(str, output);
   ck_assert_int_eq(res, 1);
@@ -73,7 +79,7 @@ const char str[] = "2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+2+234+45*41+
 END_TEST
 
 START_TEST(err_test_10) {
-const char str[] = "2+2*";
+  const char str[] = "2+2*";
   char output[256];
   int res = s21_smart_calc(str, output);
   ck_assert_int_eq(res, 1);
@@ -81,7 +87,7 @@ const char str[] = "2+2*";
 END_TEST
 
 START_TEST(err_test_11) {
-const char str[] = "+";
+  const char str[] = "+";
   char output[256];
   int res = s21_smart_calc(str, output);
   ck_assert_int_eq(res, 1);

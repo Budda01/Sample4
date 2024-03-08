@@ -47,7 +47,7 @@ START_TEST(calculation_test_5) {
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_eq(out, res);
-END_TEST
+  END_TEST
 }
 
 START_TEST(calculation_test_6) {
@@ -57,7 +57,7 @@ START_TEST(calculation_test_6) {
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_le(fabs(res - out), EPS);
-END_TEST
+  END_TEST
 }
 
 START_TEST(calculation_test_7) {
@@ -67,17 +67,19 @@ START_TEST(calculation_test_7) {
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_le(fabs(res - out), EPS);
-END_TEST
+  END_TEST
 }
 
 START_TEST(calculation_test_8) {
-  const char str[] = "15/(7-(1+1))*3-(2+(1+1))*15/(7-(200+1))3-(2+(1+1))(15/(7-(1+1))*3-(2+(1+1))+15/(7-(1+1))*3-(2+(1+1)))";
+  const char str[] =
+      "15/(7-(1+1))*3-(2+(1+1))*15/(7-(200+1))3-(2+(1+1))(15/"
+      "(7-(1+1))*3-(2+(1+1))+15/(7-(1+1))*3-(2+(1+1)))";
   double res = -30.072164948453608;
   char output[256];
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_le(fabs(res - out), EPS);
-END_TEST
+  END_TEST
 }
 
 START_TEST(calculation_test_9) {
@@ -87,7 +89,7 @@ START_TEST(calculation_test_9) {
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_le(fabs(res - out), EPS);
-END_TEST
+  END_TEST
 }
 
 START_TEST(calculation_test_10) {
@@ -97,7 +99,7 @@ START_TEST(calculation_test_10) {
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_le(fabs(res - out), EPS);
-END_TEST
+  END_TEST
 }
 
 START_TEST(calculation_test_11) {
@@ -107,7 +109,7 @@ START_TEST(calculation_test_11) {
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_le(fabs(res - out), EPS);
-END_TEST
+  END_TEST
 }
 
 START_TEST(calculation_test_12) {
@@ -117,7 +119,7 @@ START_TEST(calculation_test_12) {
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_eq(out, res);
-END_TEST
+  END_TEST
 }
 
 START_TEST(calculation_test_13) {
@@ -127,7 +129,7 @@ START_TEST(calculation_test_13) {
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_le(fabs(res - out), EPS);
-END_TEST
+  END_TEST
 }
 
 START_TEST(calculation_test_14) {
@@ -137,7 +139,7 @@ START_TEST(calculation_test_14) {
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_le(fabs(res - out), EPS);
-END_TEST
+  END_TEST
 }
 
 START_TEST(calculation_test_15) {
@@ -147,7 +149,7 @@ START_TEST(calculation_test_15) {
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_le(fabs(res - out), EPS);
-END_TEST
+  END_TEST
 }
 
 START_TEST(calculation_test_16) {
@@ -157,7 +159,7 @@ START_TEST(calculation_test_16) {
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_eq(out, res);
-END_TEST
+  END_TEST
 }
 
 START_TEST(calculation_test_17) {
@@ -167,7 +169,7 @@ START_TEST(calculation_test_17) {
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_eq(out, res);
-END_TEST
+  END_TEST
 }
 
 START_TEST(calculation_test_18) {
@@ -177,7 +179,7 @@ START_TEST(calculation_test_18) {
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_eq(out, res);
-END_TEST
+  END_TEST
 }
 
 START_TEST(calculation_test_19) {
@@ -187,7 +189,7 @@ START_TEST(calculation_test_19) {
   s21_smart_calc(str, output);
   double out = atof(output);
   ck_assert_int_eq(out, res);
-END_TEST
+  END_TEST
 }
 
 Suite* s21_calculation_test(void) {

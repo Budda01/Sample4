@@ -3,9 +3,7 @@
 int main() {
   int failed = 0;
 
-  Suite* s21_calc_test[] = {s21_calculation_test(),
-                              s21_err_test(),
-                              NULL};
+  Suite* s21_calc_test[] = {s21_calculation_test(), s21_err_test(), NULL};
 
   for (int i = 0; s21_calc_test[i] != NULL; i++) {
     printf("-----------------------------------------------\n");

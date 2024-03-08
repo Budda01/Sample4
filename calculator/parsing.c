@@ -6,10 +6,10 @@ void set_node(node_type type, int priority, double value, s21_node *res) {
   res->value = value;
 }
 
-double myAtof(const char *string) {
+double str_to_double(const char *string) {
   double value = 0;
   int check_for_dot = 0;
-  int dot_pos;
+  int dot_pos = 0;
 
   for (int i = 0; (string[i] < 58 && string[i] > 47) || string[i] == '.'; i++) {
     if (string[i] >= 48 && string[i] <= 57) {
@@ -28,7 +28,7 @@ double myAtof(const char *string) {
 
 double process_digit(const char **str) {
   double num = 0;
-  num = myAtof(*str);
+  num = str_to_double(*str);
   int counter_dots = 0;
   while ((**str >= '0' && **str <= '9') || **str == '.') {
     if (**str == '.') counter_dots++;
@@ -57,8 +57,7 @@ int minor_changes(s21_stack *string) {
   int size = get_stack_size(string);
   int count_digits = 0;
   int count_bin_op = 0;
-  if (size == 1 && (string->stack_array[0].type != DIGIT &&
-                    string->stack_array[0].type != X)) {
+  if (size == 1 && string->stack_array[0].type != DIGIT) {
     err = 1;
   }
   for (int i = 0; err == 0 && i < size; i++) {
@@ -207,11 +206,6 @@ int parse_symols(const char **str, s21_stack *string, int *i) {
     string->check_brt -= 1;
     (*i)++;
     (*str)++;
-  } else if (**str == 'x') {
-    string->last_index = X;
-    set_node(X, 0, 0, &(string->stack_array[*i]));
-    (*i)++;
-    (*str)++;
   } else if (err == 0)
     err = parse_un_op(str, string, i);
   return err;
@@ -257,8 +251,7 @@ int parse_trig_func(const char **str, s21_stack *string, int *i) {
 void transform(s21_stack *string, s21_stack *queue, s21_stack *stack) {
   for (int i = 0; i < get_stack_size(string); i++) {
     int size = get_stack_size(stack);
-    if (string->stack_array[i].type == DIGIT ||
-        string->stack_array[i].type == X) {
+    if (string->stack_array[i].type == DIGIT) {
       s21_push(queue, &string->stack_array[i]);
     } else if (string->stack_array[i].type == OP_BRACKET) {
       s21_push(stack, &string->stack_array[i]);

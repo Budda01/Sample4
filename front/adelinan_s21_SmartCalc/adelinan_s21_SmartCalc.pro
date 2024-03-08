@@ -25,6 +25,7 @@ HEADERS += \
 FORMS += \
     graph.ui \
     mainwindow.ui
+win32:RC_FILE = file.rc
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -32,4 +33,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    adelinan_s21_SmartCalc
+    adelinan_s21_SmartCalc \
+    file.rc \
+    icon.ico
