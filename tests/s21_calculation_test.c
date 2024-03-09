@@ -191,6 +191,30 @@ START_TEST(calculation_test_19) {
   ck_assert_int_eq(out, res);
   END_TEST
 }
+START_TEST(calculation_test_20) {
+  const char sum[] = "50000";
+  const char time[] = "10";
+  const char rate[] = "5";
+  char output[255];
+  char result[] =
+      "Ежемесячный платеж: 5115.298\nПереплата: 1152.980\nОбщая выплата: "
+      "51152.980";
+  ann_credit_calc(sum, time, rate, output);
+  ck_assert_str_eq(result, output);
+  END_TEST
+}
+START_TEST(calculation_test_21) {
+  const char sum[] = "50000";
+  const char time[] = "10";
+  const char rate[] = "5";
+  char output[255];
+  char result[] =
+      "Ежемесячный платеж: 5190.656\nНачисленные проценты: 1135.340\nДолг + "
+      "проценты: 51135.340";
+  diff_credit_calc(sum, time, rate, output);
+  ck_assert_str_eq(result, output);
+  END_TEST
+}
 
 Suite* s21_calculation_test(void) {
   Suite* s;
@@ -217,6 +241,8 @@ Suite* s21_calculation_test(void) {
   tcase_add_test(tc_core, calculation_test_17);
   tcase_add_test(tc_core, calculation_test_18);
   tcase_add_test(tc_core, calculation_test_19);
+  tcase_add_test(tc_core, calculation_test_20);
+  tcase_add_test(tc_core, calculation_test_21);
   suite_add_tcase(s, tc_core);
 
   return s;

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+#include "credit.h"
 #include "graph.h"
 
 QT_BEGIN_NAMESPACE
@@ -21,10 +22,13 @@ class MainWindow : public QMainWindow {
  private:
   Ui::MainWindow *ui;
   Graph *graph;
+  Credit *credit;
 
  private slots:
   void openGraph();
   void closeGraph();
+  void openCredit();
+  void closeCredit();
   void on_pushButton_DOT_clicked();
   void on_pushButton_0_clicked();
   void on_pushButton_1_clicked();
@@ -59,7 +63,7 @@ class MainWindow : public QMainWindow {
   void on_pushButton_EQ_clicked();
   void simple_exp();
   int calc_values();
-  QString conv_str(char *result);
   void on_pushButton_X_clicked();
+  void on_pushButton_CREDIT_clicked();
 };
 #endif  // MAINWINDOW_H

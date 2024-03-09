@@ -2,7 +2,6 @@
 
 #include <iomanip>
 #include <locale>
-#include <string>
 
 #include "./ui_mainwindow.h"
 
@@ -13,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
   graph = nullptr;
+  credit = nullptr;
 }
 MainWindow::~MainWindow() { delete ui; }
 void MainWindow::openGraph() {
@@ -26,6 +26,19 @@ void MainWindow::closeGraph() {
     graph->close();
     delete graph;
     graph = nullptr;
+  }
+}
+void MainWindow::openCredit() {
+  if (credit) {
+    closeCredit();
+  }
+  credit = new Credit(this);
+}
+void MainWindow::closeCredit() {
+  if (credit) {
+    credit->close();
+    delete credit;
+    credit = nullptr;
   }
 }
 void MainWindow::on_pushButton_DOT_clicked() {
@@ -128,23 +141,11 @@ void MainWindow::on_pushButton_MOD_clicked() {
 void MainWindow::on_pushButton_X_clicked() {
   ui->result->setText(ui->result->text() + "x");
 }
-QString MainWindow::conv_str(char *result) {
-  std::string output;
-  output = result;
-  QString qOutput = QString::fromStdString(output);
-  qOutput.replace(",", ".");
-
-  qOutput = qOutput.trimmed();
-  if (qOutput.contains('.')) {
-    while (qOutput.endsWith('0')) {
-      qOutput.chop(1);
-    }
-    if (qOutput.endsWith('.')) {
-      qOutput.chop(1);
-    }
-  }
-  return qOutput;
+void MainWindow::on_pushButton_CREDIT_clicked() {
+  openCredit();
+  credit->show();
 }
+
 void MainWindow::simple_exp() {
   char out[256];
   QString input = ui->result->text();
@@ -154,7 +155,7 @@ void MainWindow::simple_exp() {
 
   int err = s21_smart_calc(str_c, out);
   if (!err) {
-    QString qOutput = conv_str(out);
+    QString qOutput = credit->conv_str(out);
     ui->result->setText(qOutput);
   } else if (err == 1) {
     ui->result->setText("INCORRECT INPUT");

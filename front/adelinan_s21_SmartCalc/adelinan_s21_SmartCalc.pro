@@ -10,29 +10,30 @@ CONFIG += c++17
 
 SOURCES += \
     ../../calculator/calculation.c \
+    ../../calculator/credit_calc.c \
     ../../calculator/parsing.c \
     ../../calculator/stack_operations.c \
+    credit.cpp \
     graph.cpp \
     main.cpp \
     mainwindow.cpp \
     qcustomplot.cpp
 
 HEADERS += \
+    credit.h \
     graph.h \
     mainwindow.h \
     qcustomplot.h
 
 FORMS += \
+    credit.ui \
     graph.ui \
     mainwindow.ui
 win32:RC_FILE = file.rc
-
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    adelinan_s21_SmartCalc \
-    file.rc \
-    icon.ico
+    adelinan_s21_SmartCalc

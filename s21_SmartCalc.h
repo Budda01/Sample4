@@ -67,3 +67,8 @@ double calc_exp(s21_stack *expression, int *err);
 void un_op_calc(s21_stack *stack, node_type oper);
 int bin_op_calc(s21_stack *stack, node_type oper);
 double get_value(s21_stack *stack);
+
+int ann_credit_calc(const char *sum, const char *time, const char *rate,
+                    char *output);
+int diff_credit_calc(const char *sum, const char *time, const char *rate,
+                     char *output);

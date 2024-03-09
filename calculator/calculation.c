@@ -1,6 +1,5 @@
 #include "../s21_SmartCalc.h"
 
-
 double get_value(s21_stack *stack) {
   s21_node result;
   s21_pop(stack, &result);

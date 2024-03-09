@@ -819,9 +819,9 @@ QPushButton:pressed {
    <widget class="QPushButton" name="pushButton_CREDIT">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>10</x>
       <y>330</y>
-      <width>55</width>
+      <width>115</width>
       <height>55</height>
      </rect>
     </property>
@@ -839,31 +839,6 @@ QPushButton:pressed {
     </property>
     <property name="text">
      <string>CREDIT</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_DEBIT">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>330</y>
-      <width>55</width>
-      <height>55</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-	background-color: rgb(91, 109, 116);
-	border-radius: 20px;
-}
-
-QPushButton:pressed {
-	background-color: rgb(36, 91, 113);
-	border-radius: 20px;
-}
-</string>
-    </property>
-    <property name="text">
-     <string>DEBIT</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_MOD">
