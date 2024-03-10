@@ -461,7 +461,7 @@ QPushButton:pressed {
 </string>
    </property>
    <property name="text">
-    <string>Срок</string>
+    <string>Срок(в мес.)</string>
    </property>
   </widget>
   <widget class="QLabel" name="Rate">
