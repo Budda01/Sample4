@@ -18,6 +18,8 @@ class MainWindow : public QMainWindow {
  public:
   MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
+  int check_calc = 0;
+  QString for_x_calc;
 
  private:
   Ui::MainWindow *ui;
@@ -65,5 +67,7 @@ class MainWindow : public QMainWindow {
   int calc_values();
   void on_pushButton_X_clicked();
   void on_pushButton_CREDIT_clicked();
+  void calc_one_value(QString for_x_calc);
+  void Output_and_err(char *setingtxt, int err, int check_gr);
 };
 #endif  // MAINWINDOW_H

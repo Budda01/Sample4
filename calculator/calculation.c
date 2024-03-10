@@ -105,6 +105,7 @@ double calc_exp(s21_stack *expression, int *err) {
 }
 
 int s21_smart_calc(const char *str, char *result) {
+  printf("STRR %s\n", str);
   double res = 0;
   s21_stack queue = {0};
   int err = to_postfix(str, &queue);

@@ -103,6 +103,7 @@ void MainWindow::on_pushButton_C_clicked() {
   }
 }
 void MainWindow::on_pushButton_AC_clicked() {
+  check_calc = 0;
   ui->result->setText("");
   if (graph) {
     closeGraph();
@@ -154,14 +155,7 @@ void MainWindow::simple_exp() {
   const char *str_c = byteArray.constData();
 
   int err = s21_smart_calc(str_c, out);
-  if (!err) {
-    QString qOutput = credit->conv_str(out);
-    ui->result->setText(qOutput);
-  } else if (err == 1) {
-    ui->result->setText("INCORRECT INPUT");
-  } else if (err == 2) {
-    ui->result->setText("DIVISION BY ZERO");
-  }
+  Output_and_err(out, err, 0);
 }
 int MainWindow::calc_values() {
   double res[100] = {0};
@@ -193,20 +187,49 @@ int MainWindow::calc_values() {
   }
   return err;
 }
+void MainWindow::calc_one_value(QString for_x_calc) {
+  char out[256];
+  int err = 0;
+  QString calc_one = ui->result->text();
+  calc_one.replace("X = ", "");
+  for_x_calc.replace("x", "(Q)");
+  for_x_calc.replace("Q", calc_one);
+  QByteArray byteArray = for_x_calc.toUtf8();
+  const char *str_c = byteArray.constData();
+  err = s21_smart_calc(str_c, out);
+  Output_and_err(out, err, 0);
+}
 void MainWindow::on_pushButton_EQ_clicked() {
-  QString input = ui->result->text();
-  if (input.contains("x")) {
-    int err = 0;
-    openGraph();
-    err = calc_values();
-    if (!err) {
-      graph->show();
-    } else if (err == 1) {
-      ui->result->setText("INCORRECT INPUT");
-    } else if (err == 2) {
-      ui->result->setText("DIVISION BY ZERO");
+  if (check_calc == 0) {
+    QString input = ui->result->text();
+    if (input.contains("x")) {
+      if (ui->Calculation->isChecked()) {
+        for_x_calc = ui->result->text();
+        ui->result->setText("X = ");
+        check_calc = 1;
+      } else if (ui->Graf->isChecked()) {
+        openGraph();
+        int err = calc_values();
+        Output_and_err(NULL, err, 1);
+      }
+    } else {
+      simple_exp();
     }
   } else {
-    simple_exp();
+    check_calc = 0;
+    calc_one_value(for_x_calc);
+  }
+}
+
+void MainWindow::Output_and_err(char *setingtxt, int err, int check_gr){
+  if (err == 1){
+    ui->result->setText("INCORRECT INPUT");
+  }else if (err == 2){
+    ui->result->setText("DIVISION BY ZERO");
+  }else if(check_gr == 1){
+    graph->show();
+  }else if(!check_gr){
+    QString qOutput = credit->conv_str(setingtxt);
+    ui->result->setText(qOutput);
   }
 }

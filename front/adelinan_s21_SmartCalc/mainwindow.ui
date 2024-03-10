@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>431</width>
-    <height>396</height>
+    <height>414</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
       <x>10</x>
       <y>15</y>
       <width>411</width>
-      <height>65</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -45,7 +45,7 @@
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>150</y>
+      <y>170</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -70,7 +70,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>250</x>
-      <y>150</y>
+      <y>170</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -95,7 +95,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>150</y>
+      <y>170</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -120,7 +120,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>210</y>
+      <y>230</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -145,7 +145,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>250</x>
-      <y>210</y>
+      <y>230</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -170,7 +170,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>210</y>
+      <y>230</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -195,7 +195,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>270</y>
+      <y>290</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -220,7 +220,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>250</x>
-      <y>270</y>
+      <y>290</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -245,7 +245,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>270</y>
+      <y>290</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -270,7 +270,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>250</x>
-      <y>330</y>
+      <y>350</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -295,7 +295,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>330</y>
+      <y>350</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -320,7 +320,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>90</y>
+      <y>110</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -345,7 +345,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>90</y>
+      <y>110</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -370,7 +370,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>250</x>
-      <y>90</y>
+      <y>110</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -395,7 +395,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>90</y>
+      <y>110</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -420,7 +420,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>90</y>
+      <y>110</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -445,7 +445,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>90</y>
+      <y>110</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -470,7 +470,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>210</y>
+      <y>230</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -495,7 +495,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>270</y>
+      <y>290</y>
       <width>55</width>
       <height>115</height>
      </rect>
@@ -520,7 +520,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>210</y>
+      <y>230</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -545,7 +545,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>210</y>
+      <y>230</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -570,7 +570,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>210</y>
+      <y>230</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -595,7 +595,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>150</y>
+      <y>170</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -620,7 +620,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>150</y>
+      <y>170</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -645,7 +645,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>150</y>
+      <y>170</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -670,7 +670,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>270</y>
+      <y>290</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -695,7 +695,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>270</y>
+      <y>290</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -720,7 +720,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>270</y>
+      <y>290</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -745,7 +745,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>90</y>
+      <y>110</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -770,7 +770,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>150</y>
+      <y>170</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -795,7 +795,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>330</y>
+      <y>350</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -820,7 +820,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>330</y>
+      <y>350</y>
       <width>115</width>
       <height>55</height>
      </rect>
@@ -845,7 +845,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>330</y>
+      <y>350</y>
       <width>55</width>
       <height>55</height>
      </rect>
@@ -864,6 +864,46 @@ QPushButton:pressed {
     </property>
     <property name="text">
      <string>MOD</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="Graf">
+    <property name="geometry">
+     <rect>
+      <x>114</x>
+      <y>85</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">qproperty-alignment: 'AlignVCenter | AlignRight';
+color: White;
+font: 12pt &quot;Ubuntu&quot;;
+
+</string>
+    </property>
+    <property name="text">
+     <string>GRAPH</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="Calculation">
+    <property name="geometry">
+     <rect>
+      <x>213</x>
+      <y>85</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">qproperty-alignment: 'AlignVCenter | AlignRight';
+color: White;
+font: 12pt &quot;Ubuntu&quot;;
+
+</string>
+    </property>
+    <property name="text">
+     <string>CALCUL</string>
     </property>
    </widget>
   </widget>
